@@ -6,4 +6,6 @@ import com.mz.cth.nameisland.model.Question;
 
 public interface IQuestion extends JpaRepository<Question, Long>{
 
+	Question findByQuestion(String name);
+
 }

@@ -11,16 +11,15 @@ import javax.persistence.OneToOne;
 public class Answer {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-
 	private long id;
-	@ManyToOne 
+	@ManyToOne
 	private Player player;
 	@ManyToOne
 	private Question question;
-	
-	@OneToOne
+
+	@ManyToOne
 	private Game game;
-	
+
 	private String answer;
 
 	public long getId() {
@@ -30,7 +29,6 @@ public class Answer {
 	public void setId(long id) {
 		this.id = id;
 	}
-
 
 	public Game getGame() {
 		return game;
@@ -64,6 +62,4 @@ public class Answer {
 		this.question = question;
 	}
 
-
-	
 }

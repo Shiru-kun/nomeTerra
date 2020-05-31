@@ -1,6 +1,6 @@
 package com.mz.cth.nameisland.beans;
 
-public class SignUpBean {
+public class SignupBean {
 
 	private String pwd;
 	private String username;

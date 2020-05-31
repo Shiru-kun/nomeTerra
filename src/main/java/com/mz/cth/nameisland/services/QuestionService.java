@@ -49,4 +49,9 @@ public class QuestionService {
 		return iQuestion.findAll();
 
 	}
+
+	public Question findByQuestion(String name) {
+		// TODO Auto-generated method stub
+		return iQuestion.findByQuestion(name);
+	}
 }

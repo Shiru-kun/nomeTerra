@@ -1,6 +1,7 @@
 package com.mz.cth.nameisland.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -8,6 +9,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 import com.mz.cth.nameisland.modelEnums.PlayerStatus;
 import com.mz.cth.nameisland.modelEnums.PlayerType;
@@ -24,6 +26,7 @@ public class Player {
 	private long points;
 	private String pwd;
 	private LocalDateTime dataEntry;
+	
 	@Enumerated(EnumType.STRING)
 	private PlayerStatus playerStatus;
 	@Enumerated(EnumType.STRING)

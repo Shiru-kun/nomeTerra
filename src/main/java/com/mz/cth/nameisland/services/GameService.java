@@ -1,6 +1,8 @@
 package com.mz.cth.nameisland.services;
 
+import java.time.LocalDateTime;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -17,6 +19,7 @@ public class GameService {
 	public boolean save(Game game) {
 
 		try {
+			game.setDataEntry(LocalDateTime.now());
 			iGame.save(game);
 			return true;
 
@@ -37,15 +40,25 @@ public class GameService {
 		}
 
 	}
+ 
+	public Optional<Game> findById(long gameId) {
 
-	public Game findById(long gameId) {
+		return iGame.findById(gameId);
+	}
+	public Game findGame(long gameId) {
 
 		return iGame.getOne(gameId);
 	}
 
+	
+	public Game findByPlayer(long gameId) {
+
+		return iGame.findGameByPlayer(gameId);
+		}
 	public List<Game> findAll() {
 
 		return iGame.findAll();
 	}
+	
 
 }
